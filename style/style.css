@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "yekanbakhregular";
+  src: url("../fonts/iranyekanwebregular.woff") format("woff");
+}
+@font-face {
+  font-family: "yekanbakhbold";
+  src: url("../fonts/YekanBakhBold.woff") format("woff");
+}
+body {
+  font-family: "yekanbakhregular", Arial, Helvetica, sans-serif;
+  background: #f5f5f5;
+}
+
+.container {
+  margin: 70px 67px;
+  color: #282828;
+}
+@media screen and (max-width: 400px) {
+  .container {
+    margin: 31px 12px;
+  }
+}
+
+.header {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 44px;
+}
+@media screen and (max-width: 400px) {
+  .header {
+    font-size: 20px;
+  }
+}
+
+.header__span {
+  color: #8a6ef8;
+}
+
+.cards-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+  justify-content: flex-start;
+  margin-bottom: 83px;
+  align-items: stretch;
+}
+@media screen and (max-width: 400px) {
+  .cards-wrapper {
+    margin: 0;
+    gap: 12px;
+  }
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  filter: drop-shadow(0px 0px 22px rgba(228, 164, 255, 0.16));
+  flex: 1 1 clamp(200px, 25%, 215px);
+  padding: 9px;
+}
+@media screen and (max-width: 400px) {
+  .card {
+    padding: 8.5px 5.91px 19px 7px;
+    flex: 0 0 clamp(160px, 45%, 180px);
+  }
+}
+
+.spacer {
+  flex: 1 1 clamp(200px, 25%, 215px);
+  visibility: hidden;
+}
+
+.card__icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.7em;
+}
+@media screen and (max-width: 400px) {
+  .card__icon {
+    width: 33px;
+    height: 33px;
+    margin-bottom: 8.9px;
+  }
+}
+
+.card__header {
+  font-family: "yekanbakhbold", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  margin-bottom: 0.7em;
+}
+@media screen and (max-width: 400px) {
+  .card__header {
+    font-size: 12px;
+    margin-bottom: 8.4px;
+  }
+}
+
+.card__text {
+  font-size: 13px;
+  text-align: justify;
+  margin-bottom: 1em;
+}
+@media screen and (max-width: 400px) {
+  .card__text {
+    font-size: 10px;
+    font-weight: 200;
+    margin-bottom: 0.3em;
+  }
+}
+
+.accordion-wrapper {
+  background: #8a6ef8;
+  border-radius: 25px;
+  padding: 33.51px 50px;
+  margin: 70px 67px;
+  font-family: "Vazirmatn", Arial, Helvetica, sans-serif;
+}
+@media screen and (max-width: 400px) {
+  .accordion-wrapper {
+    border-radius: 0;
+    margin: 0;
+    padding: 22px;
+  }
+}
+
+.accordion-wrapper__header {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  margin-bottom: 17px;
+}
+.accordion-wrapper__header h1 {
+  margin-right: 13.8px;
+  font-size: 28px;
+  font-weight: semi-bold;
+}
+@media screen and (max-width: 400px) {
+  .accordion-wrapper__header h1 {
+    font-size: 24px;
+  }
+}
+
+.accordion-svg {
+  width: 24px;
+  height: 24px;
+}
+@media screen and (max-width: 400px) {
+  .accordion-svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.accordion-svg--active {
+  transform: rotate(180deg);
+}
+
+.accordion {
+  transition: all 0.5s ease;
+  background: #ffffff;
+  border-radius: 25px;
+  margin-bottom: 22px;
+  padding: 16.5px 20px;
+}
+@media screen and (max-width: 400px) {
+  .accordion {
+    margin-bottom: 20px;
+  }
+}
+
+.accordion__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22px;
+  transition: all 0.5s ease;
+}
+@media screen and (max-width: 400px) {
+  .accordion__header {
+    font-size: 18px;
+  }
+}
+.accordion__header:hover {
+  color: #8a6ef8;
+}
+
+.accordion__topics {
+  margin-top: 21px;
+  font-size: 16px;
+  list-style-position: inside;
+  display: none;
+}
+@media screen and (max-width: 400px) {
+  .accordion__topics {
+    font-size: 14;
+  }
+}
+.accordion__topics li::marker {
+  font-size: 12px;
+}
+
+.active,
+.hover {
+  color: #8a6ef8;
+}
+
+.accordion--collapse {
+  display: block;
+}
+
+/*# sourceMappingURL=style.css.map */

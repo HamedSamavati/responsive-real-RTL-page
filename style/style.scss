@@ -1,0 +1,191 @@
+$purple: #8a6ef8;
+$mobile-width: 400;
+
+@mixin width($width) {
+  @if ($width==400) {
+    @media screen and (max-width: 400px) {
+      @content;
+    }
+  } @else if ($width==800) {
+    @media screen and (max-width: 800px) {
+      @content;
+    }
+  }
+}
+@mixin hover() {
+  color: $purple;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "yekanbakhregular";
+  src: url("../fonts/iranyekanwebregular.woff") format("woff");
+}
+@font-face {
+  font-family: "yekanbakhbold";
+  src: url("../fonts/YekanBakhBold.woff") format("woff");
+}
+body {
+  font-family: "yekanbakhregular", Arial, Helvetica, sans-serif;
+  background: #f5f5f5;
+}
+.container {
+  margin: 70px 67px;
+  color: #282828;
+  @include width($mobile-width) {
+    margin: 31px 12px;
+  }
+}
+.header {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 44px;
+  @include width($mobile-width) {
+    font-size: 20px;
+  }
+}
+.header__span {
+  color: #8a6ef8;
+}
+.cards-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+  justify-content: flex-start;
+  margin-bottom: 83px;
+  align-items: stretch;
+  @include width($mobile-width) {
+    margin: 0;
+    gap: 12px;
+  }
+}
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  filter: drop-shadow(0px 0px 22px rgba(#e4a4ff, 0.16));
+  flex: 1 1 clamp(200px, 25%, 215px);
+  padding: 9px;
+  @include width($mobile-width) {
+    padding: 8.5px 5.91px 19px 7px;
+    flex: 0 0 clamp(160px, 45%, 180px);
+  }
+}
+.spacer {
+  flex: 1 1 clamp(200px, 25%, 215px);
+  visibility: hidden;
+}
+.card__icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.7em;
+  @include width($mobile-width) {
+    width: 33px;
+    height: 33px;
+    margin-bottom: 8.9px;
+  }
+}
+.card__header {
+  font-family: "yekanbakhbold", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  margin-bottom: 0.7em;
+  @include width($mobile-width) {
+    font-size: 12px;
+    margin-bottom: 8.4px;
+  }
+}
+.card__text {
+  font-size: 13px;
+  text-align: justify;
+  margin-bottom: 1em;
+  @include width($mobile-width) {
+    font-size: 10px;
+    font-weight: 200;
+    margin-bottom: 0.3em;
+  }
+}
+.accordion-wrapper {
+  background: $purple;
+  border-radius: 25px;
+  padding: 33.51px 50px;
+  margin: 70px 67px;
+  font-family: "Vazirmatn", Arial, Helvetica, sans-serif;
+  @include width($mobile-width) {
+    border-radius: 0;
+    margin: 0;
+    padding: 22px;
+  }
+}
+.accordion-wrapper__header {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  margin-bottom: 17px;
+  h1 {
+    margin-right: 13.8px;
+    font-size: 28px;
+    font-weight: semi-bold;
+    @include width($mobile-width) {
+      font-size: 24px;
+    }
+  }
+}
+.accordion-svg {
+  width: 24px;
+  height: 24px;
+  @include width($mobile-width) {
+    width: 16px;
+    height: 16px;
+  }
+}
+.accordion-svg--active {
+  transform: rotate(180deg);
+}
+.accordion {
+  transition: all 0.5s ease;
+  background: #ffffff;
+  border-radius: 25px;
+  margin-bottom: 22px;
+  padding: 16.5px 20px;
+  @include width($mobile-width) {
+    margin-bottom: 20px;
+  }
+}
+.accordion__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22px;
+  transition: all 0.5s ease;
+  @include width($mobile-width) {
+    font-size: 18px;
+  }
+  &:hover {
+    @include hover;
+  }
+}
+.accordion__topics {
+  margin-top: 21px;
+  font-size: 16px;
+  list-style-position: inside;
+  display: none;
+  @include width($mobile-width) {
+    font-size: 14;
+  }
+  li::marker {
+    font-size: 12px;
+  }
+}
+.active,
+.hover {
+  @include hover();
+}
+.accordion--collapse {
+  display: block;
+}
